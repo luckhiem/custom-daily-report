@@ -1,0 +1,12 @@
+{
+    "dataTest": [
+        {
+            "name": "Automation",
+            "total": 120
+        },
+        {
+            "name": "Total Test Case",
+            "total": 300
+        }
+    ]
+}

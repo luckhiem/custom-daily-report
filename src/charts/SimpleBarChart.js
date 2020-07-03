@@ -2,17 +2,9 @@ import React, { PureComponent } from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+import data from '../data.json';
 
-const testData = [
-    {
-        "name": "Automation",
-        "total": 120
-    },
-    {
-        "name": "Total Test Case",
-        "total": 300
-    }
-];
+const testData = data.dataTest;
 
 export default class Example extends PureComponent {
     render() {

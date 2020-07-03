@@ -6,12 +6,11 @@ import {
   AppstoreOutlined,
   PieChartOutlined,
 } from '@ant-design/icons';
-
+import data from '../data.json';
 
 const dataDashboard = {
-  totalTestCase: 100,
-  totalAutomationTest: 67,
-  numFinishTask: 10,
+  totalTestCase: data.dataTest[1].total,
+  totalAutomationTest: data.dataTest[0].total,
 }
 
 class HomePage extends Component {

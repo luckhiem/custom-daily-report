@@ -1,16 +1,8 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from 'recharts';
+import data from '../data.json';
 
-const testData = [
-  {
-    "name": "Automation",
-    "total": 120
-  },
-  {
-    "name": "Total Test Case",
-    "total": 300
-  }
-];
+const testData = data.dataTest;
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
