@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
-
 } from 'recharts';
 
 const testData = [
@@ -16,8 +15,6 @@ const testData = [
 ];
 
 export default class Example extends PureComponent {
-    static jsfiddleUrl = 'https://jsfiddle.net/alidingling/q4eonc12/';
-
     render() {
         return (
             <ResponsiveContainer width={'100%'} height={300}>
@@ -34,8 +31,7 @@ export default class Example extends PureComponent {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="total" fill="#8884d8" />
-                    <Bar dataKey="total" fill="#82ca9d" />
+                    <Bar dataKey="total" fill="#0088FE" />
                 </BarChart>
             </ResponsiveContainer>
         );
