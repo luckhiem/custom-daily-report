@@ -3,6 +3,7 @@ import { Row, Col, Card } from 'antd'
 import { getPercentage, scrollTo } from '@/untils'
 import { Consumer } from '../contexts/expand'
 
+
 export const MyCardItem = ({
   labelColor,
   label,
@@ -13,58 +14,34 @@ export const MyCardItem = ({
   onClick={clickHander}
   bodyStyle={{ padding: '12px' }}
   hoverable>
-  <p className='card_item_label' style={{ color: labelColor }}>
-    {label}
-  </p>
-  <p className='card_item_title' style={{ color: labelColor }}>{title}</p>
-  <p className='card_item_content'>{content}</p>
-</Card>
-
-const getScrollDownFunc = test => toggleExpand => () => test && scrollTo(test.testFilePath, toggleExpand)
+    <p className='card_item_label' style={{ color: labelColor }}>
+      {label}
+    </p>
+    <p className='card_item_title' style={{ color: labelColor }}>{title}</p>
+    <p className='card_item_content'>{content}</p>
+  </Card>
 
 const DashBoard = ({
-  numTotalTask,
-  numOnProgressTask,
-  numFinishTask,
+  totalTestCase,
+  totalAutomationTest,
 }) => {
   const TotalTask = {
-    title: numTotalTask,
-    content: 'Total Task'
+    title: totalTestCase,
+    content: 'Total Test Case'
   }
   const OnProgressTask = {
-    title: numOnProgressTask,
-    content: 'On Progress Task'
+    title: totalAutomationTest,
+    content: 'Automation Test Case'
   }
 
-  const FinishTask = {
-    title: numFinishTask,
-    content: 'Finished Task'
+  const cardsList = [TotalTask, OnProgressTask]
+  const TaskDone = {
+    title: totalTestCase - totalAutomationTest,
+    content: 'Percent Auto Test Case',
+    label: `${getPercentage(totalAutomationTest, totalTestCase)} %`,
+    labelColor: '#d466d6',
   }
-
-  const numTaskDone = numFinishTask;
-  const numTaskRemain = numTotalTask - numFinishTask;
-
-  const cardsList = [TotalTask, OnProgressTask, FinishTask]
-  if (numTaskDone) {
-    const TaskDone = {
-      title: numFinishTask,
-      content: 'Percent Task Done',
-      label: `${getPercentage(numFinishTask, numTotalTask)} %`,
-      labelColor: '#d466d6',
-      // clickHander: getScrollDownFunc(todoTest),
-    }
-    cardsList.push(TaskDone)
-  }
-  if (numTaskRemain) {
-    const TaskRemain = {
-      title: numTaskRemain,
-      content: 'Percent Task Remain',
-      label: `${getPercentage(numTaskRemain, numTotalTask)} %`,
-      labelColor: '#cf1322',
-      // clickHander: getScrollDownFunc(execErrorTest),
-    }
-    cardsList.push(TaskRemain)
-  }
+  cardsList.push(TaskDone)
   const length = cardsList.length
   const gutter = (24 % length) ? 0 : 12
   return <Consumer>
@@ -88,7 +65,6 @@ const DashBoard = ({
         </div>
       )
     }
-
   </Consumer>
 }
 

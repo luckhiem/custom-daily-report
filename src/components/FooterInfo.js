@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Github = 'https://github.com/Hazyzh/jest-html-reporters'
-const Issues = 'https://github.com/Hazyzh/jest-html-reporters/issues'
-const versions = process.env.VERSIONS || '1.0.0'
+const Github = 'https://github.com/luckhiem/custom-daily-report'
+const Issues = 'https://github.com/luckhiem/custom-daily-report/issues'
+const versions = '1.0.0'
 
 const FooterInfo = () =>
   <div>
@@ -14,7 +14,7 @@ const FooterInfo = () =>
     <div className='bottom-line'>
       <span />
       <p>
-        Versions _{versions}
+        Versions {versions}
       </p>
     </div>
   </div>
