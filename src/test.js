@@ -1,15 +1,15 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Layout, Menu, PageHeader, Descriptions } from 'antd';
+import { Layout, Menu } from 'antd';
 import { ProjectOutlined } from '@ant-design/icons';
+import logo from './asset/linkedin.svg'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ProjectPage1 from './pages/ProjectPage1';
 import ProjectPage2 from './pages/ProjectPage2';
 import data from './data.json';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 
 const dataDashboard = {
     totalTestCase: data.dataTest[1].total,
@@ -29,7 +29,6 @@ export default class SiderDemo extends React.Component {
     };
 
     render() {
-        console.log(this.state.location)
         return (
             <Router>
                 <Layout style={{ minHeight: '100vh' }}>
@@ -54,25 +53,8 @@ export default class SiderDemo extends React.Component {
                             fontSize: "large",
                         }}>Report</Header>
                         <Content style={{ margin: '0 16px' }}>
-                            <div className="site-page-header-ghost-wrapper" style={{ margin: '16px 0' }}>
-                                <PageHeader
-                                    ghost={false}
-                                    title="Title"
-                                    subTitle="This is a subtitle">
-                                    <Descriptions size="small" column={3}>
-                                        <Descriptions.Item label="Created">Lili Qu</Descriptions.Item>
-                                        <Descriptions.Item label="Association"><a>421421</a>
-                                        </Descriptions.Item>
-                                        <Descriptions.Item label="Creation Time">2017-01-10</Descriptions.Item>
-                                        <Descriptions.Item label="Effective Time">2017-10-10</Descriptions.Item>
-                                        <Descriptions.Item label="Remarks">Gonghu Road, Xihu District, Hangzhou, Zhejiang, China</Descriptions.Item>
-                                    </Descriptions>
-                                </PageHeader>
-                            </div>
-                            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                                <Route exact path="/ProjectPage1" component={ProjectPage1} />
-                                <Route path="/ProjectPage2" component={ProjectPage2} />
-                            </div>
+                            <Route exact path="/ProjectPage1" component={ProjectPage1} />
+                            <Route exact path="/ProjectPage2" component={ProjectPage2} />
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>KhiemLuc Design ©2020</Footer>
                     </Layout>
