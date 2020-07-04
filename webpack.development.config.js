@@ -16,6 +16,7 @@ module.exports = {
   output: {
     path: resolve('dist'),
     filename: '[name].js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.json'],
@@ -30,6 +31,7 @@ module.exports = {
     open: true,
     hot: true,
     quiet: true,
+    historyApiFallback: true,
   },
   devtool: 'eval-source-map',
   plugins: [
