@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col, Card } from 'antd'
 import { getPercentage } from '@/untils'
 import { Consumer } from '../contexts/expand'
+import '../styles/dashBoard.less'
 
 const MyCardItem = ({
   labelColor,

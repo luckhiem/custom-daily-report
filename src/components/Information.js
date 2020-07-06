@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons'
 import SimplePieChart from '../charts/SimplePieChart.js';
 import SimpleBarChart from '../charts/SimpleBarChart.js';
+import '../styles/information.less'
 
 const date = new Date().toDateString();
 
