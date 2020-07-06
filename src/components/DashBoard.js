@@ -1,9 +1,9 @@
 import React from 'react'
 import { Row, Col, Card } from 'antd'
-import { getPercentage, scrollTo } from '@/untils'
+import { getPercentage } from '@/untils'
 import { Consumer } from '../contexts/expand'
 
-export const MyCardItem = ({
+const MyCardItem = ({
   labelColor,
   label,
   title,
@@ -20,51 +20,55 @@ export const MyCardItem = ({
     <p className='card_item_content'>{content}</p>
   </Card>
 
-const DashBoard = ({
-  totalTestCase,
-  totalAutomationTest,
-}) => {
-  const TotalTask = {
-    title: totalTestCase,
-    content: 'Total Test Case'
-  }
-  const OnProgressTask = {
-    title: totalAutomationTest,
-    content: 'Automation Test Case'
-  }
 
-  const cardsList = [TotalTask, OnProgressTask]
-  const TaskDone = {
-    title: totalTestCase - totalAutomationTest,
-    content: 'Percent Auto Test Case',
-    label: `${getPercentage(totalAutomationTest, totalTestCase)} %`,
-    labelColor: '#d466d6',
-  }
-  cardsList.push(TaskDone)
-  const length = cardsList.length
-  const gutter = (24 % length) ? 0 : 12
-  return <Consumer>
-    {
-      ({ toggleExpand }) => (
-        <div className='dash_board'>
-          <Row
-            gutter={gutter}
-            type='flex'
-            justify='space-around'>
-            {
-              cardsList.map(item =>
-                <Col key={item.content} span={Math.floor(24 / length)}>
-                  <MyCardItem
-                    {...item}
-                    clickHander={item.clickHander && item.clickHander(toggleExpand)} />
-                </Col>
-              )
-            }
-          </Row>
-        </div>
-      )
+
+export default class DashBoard extends React.Component{
+  render() {
+    const totalTestCase = this.props.dataDashboard.totalTestCase;
+    const totalAutomationTest = this.props.dataDashboard.totalAutomationTest;
+
+    const TotalTask = {
+      title: totalTestCase,
+      content: 'Total Test Case'
     }
-  </Consumer>
-}
+    const OnProgressTask = {
+      title: totalAutomationTest,
+      content: 'Automation Test Case'
+    }
 
-export default DashBoard
+    const cardsList = [TotalTask, OnProgressTask]
+    const TaskDone = {
+      title: totalTestCase - totalAutomationTest,
+      content: 'Percent Auto Test Case',
+      label: `${getPercentage(totalAutomationTest, totalTestCase)} %`,
+      labelColor: '#d466d6',
+    }
+    cardsList.push(TaskDone)
+    const length = cardsList.length
+    const gutter = (24 % length) ? 0 : 12
+    return (
+      <Consumer>
+        {
+          ({ toggleExpand }) => (
+            <div className='dash_board'>
+              <Row
+                gutter={gutter}
+                type='flex'
+                justify='space-around'>
+                {
+                  cardsList.map(item =>
+                    <Col key={item.content} span={Math.floor(24 / length)}>
+                      <MyCardItem
+                        {...item}
+                        clickHander={item.clickHander && item.clickHander(toggleExpand)} />
+                    </Col>
+                  )
+                }
+              </Row>
+            </div>
+          )
+        }
+      </Consumer>
+    )
+  }
+}

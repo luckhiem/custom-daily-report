@@ -5,16 +5,9 @@ import './index.css';
 import { Layout, Menu } from 'antd';
 import { ProjectOutlined } from '@ant-design/icons';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ProjectPage1 from './pages/ProjectPage1';
-import ProjectPage2 from './pages/ProjectPage2';
-import data from './data.json';
+import AnalystPage from './pages/AnalystPage';
 
 const { Header, Content, Footer, Sider } = Layout;
-
-const dataDashboard = {
-    totalTestCase: data.dataTest[1].total,
-    totalAutomationTest: data.dataTest[0].total,
-}
 
 const menuItems = {
     "Elite": [
@@ -30,7 +23,17 @@ const menuItems = {
     "Luxury": [
         {
             "name": "Automation",
+            "total": 70
+        },
+        {
+            "name": "Total Test Case",
             "total": 120
+        }
+    ],
+    "Premium": [
+        {
+            "name": "Automation",
+            "total": 200
         },
         {
             "name": "Total Test Case",
@@ -63,9 +66,14 @@ const generatePageData = () => {
             totalTestCase: menuItems[menuKeys[i]][1].total,
             totalAutomationTest: menuItems[menuKeys[i]][0].total,
         }
-        console.log(dataDashboard)
+        const dataInformation = menuItems[menuKeys[i]];
         menuPage.push(
-            <Route exact path={routeMenuItems} component={() => <ProjectPage1 dataDashboard={dataDashboard}/>} />
+            <div key={i.toString()}>
+                <Route
+                    exact path={routeMenuItems}
+                    component={() => <AnalystPage dataDashboard={dataDashboard} dataInformation={dataInformation} />}
+                />
+            </div>
         )
     }
     return menuPage
@@ -78,7 +86,6 @@ const pageGenerate = generatePageData(menuItems);
 class App extends React.Component {
     state = {
         collapsed: false,
-        dataDashboard: dataDashboard,
         location: this.props.location
     };
 

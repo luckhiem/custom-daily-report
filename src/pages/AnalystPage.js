@@ -7,7 +7,7 @@ import {
   PieChartOutlined,
 } from '@ant-design/icons';
 
-class ProjectPage1 extends Component {
+class AnalystPage extends Component {
   constructor(props) {
     super(props);
   }
@@ -33,13 +33,13 @@ class ProjectPage1 extends Component {
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <BackTop />
           <h3 className='area_subject'><AppstoreOutlined /> Dashboard</h3>
-          <DashBoard {...this.props.dataDashboard} />
+          <DashBoard dataDashboard={this.props.dataDashboard} />
           <h3 className='area_subject'><PieChartOutlined /> Information</h3>
-          <Information />
+          <Information dataInformation={this.props.dataInformation} />
         </div>
       </div>
     )
   }
 }
 
-export default ProjectPage1
+export default AnalystPage
