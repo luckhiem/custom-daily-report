@@ -1,8 +1,28 @@
 {
-    "dataTest": [
+    "Elite": [
         {
             "name": "Automation",
             "total": 120
+        },
+        {
+            "name": "Total Test Case",
+            "total": 300
+        }
+    ],
+    "Luxury": [
+        {
+            "name": "Automation",
+            "total": 70
+        },
+        {
+            "name": "Total Test Case",
+            "total": 120
+        }
+    ],
+    "Premium": [
+        {
+            "name": "Automation",
+            "total": 200
         },
         {
             "name": "Total Test Case",

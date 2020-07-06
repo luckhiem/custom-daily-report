@@ -6,41 +6,11 @@ import { Layout, Menu } from 'antd';
 import { ProjectOutlined } from '@ant-design/icons';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AnalystPage from './pages/AnalystPage';
+import data from './data.json'
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const menuItems = {
-    "Elite": [
-        {
-            "name": "Automation",
-            "total": 120
-        },
-        {
-            "name": "Total Test Case",
-            "total": 300
-        }
-    ],
-    "Luxury": [
-        {
-            "name": "Automation",
-            "total": 70
-        },
-        {
-            "name": "Total Test Case",
-            "total": 120
-        }
-    ],
-    "Premium": [
-        {
-            "name": "Automation",
-            "total": 200
-        },
-        {
-            "name": "Total Test Case",
-            "total": 300
-        }
-    ]
-}
+const menuItems = data
 const generateMenu = () => {
     const menuData = Object.keys(menuItems);
     const menu = [];
