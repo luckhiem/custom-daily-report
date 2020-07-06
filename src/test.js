@@ -55,12 +55,17 @@ const generateMenu = () => {
 }
 
 const generatePageData = () => {
-    const menuData = Object.keys(menuItems)
+    const menuKeys = Object.keys(menuItems)
     const menuPage = []
-    for (let i = 0; i < menuData.length; i++) {
-        let routeMenuItems = "/" + menuData[i];
+    for (let i = 0; i < menuKeys.length; i++) {
+        let routeMenuItems = "/" + menuKeys[i];
+        const dataDashboard = {
+            totalTestCase: menuItems[menuKeys[i]][1].total,
+            totalAutomationTest: menuItems[menuKeys[i]][0].total,
+        }
+        console.log(dataDashboard)
         menuPage.push(
-            <Route exact path={routeMenuItems} component={ProjectPage1} />
+            <Route exact path={routeMenuItems} component={() => <ProjectPage1 dataDashboard={dataDashboard}/>} />
         )
     }
     return menuPage
@@ -99,8 +104,6 @@ class SiderDemo extends React.Component {
                         }}>Report</Header>
                         <Content style={{ margin: '0 16px' }}>
                             {pageGenerate}
-                            {/* <Route exact path="/ProjectPage1" component={ProjectPage1} />
-                            <Route exact path="/ProjectPage2" component={ProjectPage1} /> */}
                         </Content>
                         <Footer style={{ textAlign: 'center' }}>KhiemLuc Design ©2020</Footer>
                     </Layout>

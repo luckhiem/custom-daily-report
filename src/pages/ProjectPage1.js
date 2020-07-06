@@ -6,17 +6,12 @@ import {
   AppstoreOutlined,
   PieChartOutlined,
 } from '@ant-design/icons';
-import data from '../data.json';
-
-const dataDashboard = {
-  totalTestCase: data.dataTest[1].total,
-  totalAutomationTest: data.dataTest[0].total,
-}
 
 class ProjectPage1 extends Component {
-  state = {
-    dataDashboard: dataDashboard,
+  constructor(props) {
+    super(props);
   }
+
   render() {
     return (
       <div>
@@ -38,7 +33,7 @@ class ProjectPage1 extends Component {
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <BackTop />
           <h3 className='area_subject'><AppstoreOutlined /> Dashboard</h3>
-          <DashBoard {...this.state.dataDashboard} />
+          <DashBoard {...this.props.dataDashboard} />
           <h3 className='area_subject'><PieChartOutlined /> Information</h3>
           <Information />
         </div>
