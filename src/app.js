@@ -33,8 +33,8 @@ const generatePageData = () => {
     for (let i = 0; i < menuKeys.length; i++) {
         let routeMenuItems = "/" + menuKeys[i];
         const dataDashboard = {
-            totalTestCase: menuItems[menuKeys[i]][1].total,
-            totalAutomationTest: menuItems[menuKeys[i]][0].total,
+            totalTestCase: menuItems[menuKeys[i]]["totalData"][1].total,
+            totalAutomationTest: menuItems[menuKeys[i]]["totalData"][0].total,
         }
         const dataInformation = menuItems[menuKeys[i]];
         menuPage.push(

@@ -65,13 +65,14 @@ export default class SimplePieChart extends PureComponent {
   };
 
   render() {
+    const data = this.props.dataTest.totalData
     return (
       <ResponsiveContainer width={'100%'} height={300}>
         <PieChart width={400} height={400}>
           <Pie
             activeIndex={this.state.activeIndex}
             activeShape={renderActiveShape}
-            data={this.props.dataTest}
+            data={data}
             cx={'50%'}
             cy={'50%'}
             innerRadius={60}
@@ -81,7 +82,7 @@ export default class SimplePieChart extends PureComponent {
             onMouseEnter={this.onPieEnter}
           >
             {
-              this.props.dataTest.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+              data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
             }
           </Pie>
         </PieChart>

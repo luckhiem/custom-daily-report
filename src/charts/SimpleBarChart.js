@@ -9,12 +9,13 @@ export default class SimpleBarChart extends PureComponent {
     }
 
     render() {
+        const data = this.props.dataTest.totalData
         return (
             <ResponsiveContainer width={'100%'} height={300}>
                 <BarChart
                     width={500}
                     height={300}
-                    data={this.props.dataTest}
+                    data={data}
                     margin={{
                         top: 5, right: 30, left: 20, bottom: 5,
                     }}

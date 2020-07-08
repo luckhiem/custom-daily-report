@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons'
 import SimplePieChart from '../charts/SimplePieChart.js';
 import SimpleBarChart from '../charts/SimpleBarChart.js';
+import BrushBarChart from '../charts/BrushBarChart.js';
 import '../styles/information.less'
 
 const date = new Date().toDateString();
@@ -25,15 +26,19 @@ export default class Information extends React.Component {
     return (
       <Row>
         <Col span={14}>
-          <p className='chart_title'><PieChartFilled style={{ marginRight: '10px' }} />Total Test</p>
+          <p className='chart_title'><PieChartFilled style={{ marginRight: '10px', margin: '16px'  }} />Total Test</p>
           <SimpleBarChart dataTest={this.props.dataInformation} />
         </Col>
         <Col span={10}>
-          <p className='chart_title'><PieChartFilled style={{ marginRight: '10px' }} />Ratio</p>
+          <p className='chart_title'><PieChartFilled style={{ marginRight: '10px', margin: '16px'  }} />Ratio</p>
           <SimplePieChart dataTest={this.props.dataInformation} />
         </Col>
+        <Col span={24}>
+          <p className='chart_title'><PieChartFilled style={{ marginRight: '10px', margin: '16px' }} />Total Test</p>
+          <BrushBarChart dataTest={this.props.dataInformation} />
+        </Col>
         <Col span={24} className='main_information'>
-          <Card>
+          <Card style={{margin: '16px'}}>
             <Row span={24}>
               <Col span={16}>
                 <LabelInfo title='Date' context={date} icon={<BoxPlotFilled />} />
