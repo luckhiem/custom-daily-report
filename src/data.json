@@ -1,5 +1,14 @@
 {
     "Elite": {
+        "info": {
+            "name":"Elite Automation Project",
+            "description":"This is project automation Elite Automation Project",
+            "created": "Bui Minh Tuan",
+            "department": "QA Department",
+            "creation_time": "2020-07-07",
+            "effective_time": "2020-07-20",
+            "remarks": "106 Nguyen Van Troi, Phuong 8, Quan Phu Nhuan, TPHCM"
+        },
         "totalData": [
             {
                 "name": "Automation",
@@ -74,6 +83,15 @@
         ]
     },
     "Luxury": {
+        "info": {
+            "name":"Luxury Automation Project",
+            "description":"This is project automation Luxury Automation Project",
+            "created": "Bui Minh Tuan",
+            "department": "Development Department",
+            "creation_time": "2020-07-07",
+            "effective_time": "2020-07-20",
+            "remarks": "106 Nguyen Van Troi, Phuong 8, Quan Phu Nhuan, TPHCM"
+        },
         "totalData": [
             {
                 "name": "Automation",

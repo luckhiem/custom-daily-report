@@ -14,29 +14,33 @@ class AnalystPage extends Component {
   }
 
   render() {
+    const projectInfo = this.props.dataInformation.info;
+    const dataDashboard = this.props.dataDashboard;
+    const dataInformation = this.props.dataInformation;
+
     return (
       <div>
         <div className="site-page-header-ghost-wrapper" style={{ margin: '16px 0' }}>
           <PageHeader
             ghost={false}
-            title="Title"
-            subTitle="This is a subtitle">
+            title={projectInfo.name}
+            subTitle={projectInfo.description}>
             <Descriptions size="small" column={3}>
-              <Descriptions.Item label="Created">Lili Qu</Descriptions.Item>
-              <Descriptions.Item label="Association"><a>421421</a>
+              <Descriptions.Item label="Created">{projectInfo.created}</Descriptions.Item>
+              <Descriptions.Item label="Department"><a>{projectInfo.department}</a>
               </Descriptions.Item>
-              <Descriptions.Item label="Creation Time">2017-01-10</Descriptions.Item>
-              <Descriptions.Item label="Effective Time">2017-10-10</Descriptions.Item>
-              <Descriptions.Item label="Remarks">Gonghu Road, Xihu District, Hangzhou, Zhejiang, China</Descriptions.Item>
+              <Descriptions.Item label="Creation Time">{projectInfo.creation_time}</Descriptions.Item>
+              <Descriptions.Item label="Effective Time">{projectInfo.effective_time}</Descriptions.Item>
+              <Descriptions.Item label="Remarks">{projectInfo.remarks}</Descriptions.Item>
             </Descriptions>
           </PageHeader>
         </div>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <BackTop />
           <h3 className='area_subject'><AppstoreOutlined /> Dashboard</h3>
-          <DashBoard dataDashboard={this.props.dataDashboard} />
+          <DashBoard dataDashboard={dataDashboard} />
           <h3 className='area_subject'><PieChartOutlined /> Information</h3>
-          <Information dataInformation={this.props.dataInformation} />
+          <Information dataInformation={dataInformation} />
         </div>
       </div>
     )
