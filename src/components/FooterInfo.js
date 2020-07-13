@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/footer.css'
 
 const Github = 'https://github.com/luckhiem/custom-daily-report'
 const Issues = 'https://github.com/luckhiem/custom-daily-report/issues'

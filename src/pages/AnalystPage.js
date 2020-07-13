@@ -6,7 +6,7 @@ import {
   AppstoreOutlined,
   PieChartOutlined,
 } from '@ant-design/icons';
-import '../styles/index.less'
+import '../styles/index.css'
 
 class AnalystPage extends Component {
   constructor(props) {

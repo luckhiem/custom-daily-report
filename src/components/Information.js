@@ -10,7 +10,7 @@ import {
 import SimplePieChart from '../charts/SimplePieChart.js';
 import SimpleBarChart from '../charts/SimpleBarChart.js';
 import BrushBarChart from '../charts/BrushBarChart.js';
-import '../styles/information.less'
+import '../styles/information.css'
 
 const date = new Date().toDateString();
 

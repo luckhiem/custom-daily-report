@@ -1,0 +1,32 @@
+.footer-box {
+  padding: 20px;
+  text-align: center;
+}
+.footer-box a {
+  color: #eee;
+  margin: 0 20px;
+}
+.footer-box a:hover {
+  color: #fff;
+}
+.footer-box a:hover {
+  color: #0ebf8c;
+}
+.footer-box span {
+  display: inline-block;
+  height: 10px;
+  border-right: 1px solid #eee;
+}
+.bottom-line {
+  color: #eee;
+  text-align: center;
+}
+.bottom-line span {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #616161;
+}
+.bottom-line p {
+  margin-top: 10px;
+  color: #999;
+}

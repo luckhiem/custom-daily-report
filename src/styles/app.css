@@ -1,0 +1,15 @@
+.layout {
+  background: #f0f2f5;
+}
+.layout .header {
+  background: #fff;
+  font-size: 26px;
+}
+.layout .header .icon {
+  float: right;
+}
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

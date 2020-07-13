@@ -1,0 +1,59 @@
+.time_box {
+  color: gray;
+}
+.time_box >i {
+  margin-right: 5px;
+}
+.time_box >span {
+  font-size: 0.9em;
+}
+.time_box .time_minor {
+  color: #929292;
+}
+.time_box .time_active {
+  font-weight: 500;
+}
+.intro {
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.tooltip_box {
+  display: flex;
+  align-self: center;
+  width: 100%;
+}
+.tooltip_box .icon {
+  color: #999;
+  flex-basis: 20px;
+  flex-shrink: 0;
+  text-align: right;
+}
+.tooltip_box .title {
+  text-indent: 1em;
+  color: #999;
+  flex-basis: 70px;
+  flex-shrink: 0;
+  text-align: left;
+}
+.tooltip_box .symbol {
+  margin: 0 5px;
+}
+.tooltip_box .content {
+  text-indent: 1em;
+  flex-shrink: 1;
+  flex: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chart_title {
+  text-align: center;
+  widows: 100%;
+  margin: 0px;
+  color: #929292;
+}
+.main_information .label_title {
+  display: inline-block;
+  min-width: 120px;
+  color: #999;
+}
