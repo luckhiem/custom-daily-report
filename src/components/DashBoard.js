@@ -1,7 +1,6 @@
 import React from 'react'
 import { Row, Col, Card } from 'antd'
 import { getPercentage } from '@/untils'
-import { Consumer } from '../contexts/expand'
 import '../styles/dashBoard.css'
 
 const MyCardItem = ({
@@ -48,7 +47,7 @@ export default class DashBoard extends React.Component{
     const length = cardsList.length
     const gutter = (24 % length) ? 0 : 12
     return (
-      <Consumer>
+      <>
         {
           ({ toggleExpand }) => (
             <div className='dash_board'>
@@ -69,7 +68,7 @@ export default class DashBoard extends React.Component{
             </div>
           )
         }
-      </Consumer>
+      </>
     )
   }
 }
